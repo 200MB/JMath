@@ -72,7 +72,7 @@ string JMath::JLog(long double n,long double n1,int loopcount) {
 	string number = "";
 	int x = 0;
 	long double x1;
-	for (int i = 0; i < 6; i++) {
+	for (int i = 0; i < loopcount; i++) {
 		while (n1>= pow(n, x)) {
 			x++;
 		}
