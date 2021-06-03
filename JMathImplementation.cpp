@@ -64,7 +64,7 @@ double JMath::GeometricProgMult(int n, double b1, double q) {
 		cout << "Error(ArithmeticProgSum) Number of terms is negative";
 	}
 }
-string JMath::JLog(long double n,long double n1,int loopcount) {
+string JMath::JLog(long double n, long double n1, int loopcount) {
 	if (n < 0 || n1 < 0 || loopcount < 0) {
 		return "Error(JLog) Can't take negative Integers";
 	}
@@ -73,7 +73,7 @@ string JMath::JLog(long double n,long double n1,int loopcount) {
 	int x = 0;
 	long double x1;
 	for (int i = 0; i < loopcount; i++) {
-		while (n1>= pow(n, x)) {
+		while (n1 >= pow(n, x)) {
 			x++;
 		}
 		x -= 1;
@@ -87,17 +87,20 @@ string JMath::JLog(long double n,long double n1,int loopcount) {
 			x = 0;
 		}
 	}
-	
-	
-	while (pow(n, x) <= n1dup) {
-		x++;
+
+	x = 0;
+	if (x > 0) {
+		while (pow(n, x) <= n1dup) {
+			x++;
+		}
+		x -= 1;
+		number.insert(x, ".");
+		return number;
 	}
-	
-	number.insert(x-1, ".");
-	return number;
-
+	else {
+		number.insert(1, ".");
+		return number;
+	}
 }
-
-
 
 
