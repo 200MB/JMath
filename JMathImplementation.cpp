@@ -87,20 +87,20 @@ string JMath::JLog(long double n, long double n1, int loopcount) {
 			x = 0;
 		}
 	}
-
-	x = 0;
-	if (x > 0) {
-		while (pow(n, x) <= n1dup) {
-			x++;
+	int y = 0;
+	while (pow(n, y) <= n1dup){
+		y++;
+}
+		if (y > 0) {
+			number.insert(CountDigit(y), ".");
+			return number;
 		}
-		x -= 1;
-		number.insert(x, ".");
-		return number;
-	}
-	else {
+	else if (y == 0) {
 		number.insert(1, ".");
 		return number;
 	}
 }
-
+int JMath::CountDigit(int number) {
+	return int(log10(number) + 1);
+}
 
