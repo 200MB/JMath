@@ -103,4 +103,74 @@ string JMath::JLog(long double n, long double n1, int loopcount) {
 int JMath::CountDigit(int number) {
 	return int(log10(number) + 1);
 }
+vector<int> JMath::FindMostFrequent(vector<int>v) {
+	vector<int>v1;
+	sort(v.begin(), v.end());
+	int max = 1, most = v[0], current = 1;
+	for (int i = 1; i < v.size(); i++) {
+		if (i + 1 == v.size() && v[i] == v[i - 1]) {
+			current++;
+			if (current > max)
+			{
+				max = current;
+				break;
+			}
+		}
+		else if (i + 1 == v.size() && v[i] != v[i - 1]) {
+			if (current > max)
+			{
+				max = current;
+				break;
+			}
+		}
+		else if (v[i] == v[i - 1]) {
+			current++;
+		}
+		else if (v[i] != v[i-1] && i+1 != v.size()) {
+			if (current > max) {
+				max = current;
+				current = 1;
+			}
+		}
+	}
+	current = 1;
+	for (int i = 1; i < v.size(); i++) {
+		if (i + 1 == v.size() && v[i] == v[i - 1]) {
+			current++;
+             if (current == max) {
+				
+				v1.push_back(v[i-1]);
+				sort(v1.begin(), v1.end());
+				v1.erase(unique(v1.begin(), v1.end()), v1.end());
+				return v1;
+				break;
+			}
 
+
+		}
+		if (i + 1 == v.size() && v[i] != v[i - 1]) {
+			 if (current == max) {
+				v1.push_back(v[i-1]);
+				sort(v1.begin(), v1.end());
+				v1.erase(unique(v1.begin(), v1.end()), v1.end());
+				return v1;
+				break;
+			}
+		}
+		if (v[i] == v[i - 1]) {
+			current++;
+		}
+		else if (v[i] != v[i - 1] && i + 1 != v.size()) {
+			if (current == max) {
+				sort(v1.begin(), v1.end());
+				v1.erase(unique(v1.begin(), v1.end()), v1.end());
+				v1.push_back(v[i-1]);
+				current = 1;
+			}
+			else if (current < max) {
+				current = 1;
+			}
+		}
+	}
+}
+		
