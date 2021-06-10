@@ -5,6 +5,4 @@
  
  I'm going to update it weekly(unless i gotta have to implement a difficult formula/function/method).
  
- edit 1:
- i'm going to add more methods/functions that aren't just (formulas) like for example Find the most frequent number in a vector etc
-
+ 
