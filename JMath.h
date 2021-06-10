@@ -51,4 +51,10 @@ public:
 	/// <param name="for example JLog(2,7,3) would only show 2.807 and JLog(2,7,4) 2.8074 (it is adviced to not go over 6)"></param>
 	/// <returns></returns>
 	string JLog(long double n,long double n1,int loopcount);
+	/// <summary>
+	/// Finds the most repeated number in a vector
+	/// </summary>
+	/// <param name="Vector"></param>
+	/// <returns></returns>
+	vector<int> FindMostFrequent(vector<int>s);
 };
