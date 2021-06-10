@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 using namespace std;
 class JMath {
 public:
@@ -25,6 +26,7 @@ public:
 	/// Calculates the Arithmetical progression
 	/// </summary>
 	/// <param name="1.Number of terms 2.initial term 3.common difference"></param>
+	double AsquaredMinusBsquared(double a, double b);
 	double ArithmeticProg(int n,double a1,double d);
 	/// <summary>
 	/// calculates the sum From a1 to n (d considered)
@@ -51,6 +53,12 @@ public:
 	/// <param name="for example JLog(2,7,3) would only show 2.807 and JLog(2,7,4) 2.8074 (it is adviced to not go over 6)"></param>
 	/// <returns></returns>
 	string JLog(long double n,long double n1,int loopcount);
+	/// <summary>
+	/// outputs the amount of digits present in the number
+	/// </summary>
+	/// <param name="number"></param>
+	/// <returns></returns>
+	int CountDigit(int number);
 	/// <summary>
 	/// Finds the most repeated number in a vector
 	/// </summary>
