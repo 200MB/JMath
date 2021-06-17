@@ -9,7 +9,6 @@ public:
 	/// </summary>
 	/// <param name="a b c"></param>
 	void quad(double a,double b,double c);
-	
 	/// <summary>
 	/// returns (a+b)^2
 	/// </summary>
@@ -27,6 +26,13 @@ public:
 	/// </summary>
 	/// <param name="1.Number of terms 2.initial term 3.common difference"></param>
 	double AsquaredMinusBsquared(double a, double b);
+	/// <summary>
+	/// Calculates the n-th number in a sequence
+	/// </summary>
+	/// <param name="n"></param>
+	/// <param name="a1"></param>
+	/// <param name="d"></param>
+	/// <returns></returns>
 	double ArithmeticProg(int n,double a1,double d);
 	/// <summary>
 	/// calculates the sum From a1 to n (d considered)
@@ -50,9 +56,9 @@ public:
 	/// example:JLog(2,4,1) will return 2 because 2 ^ 2 = 4
 	/// </summary>
 	/// <param name="The last parameter is a loopcount (how precise do you want your results to be)"></param>
-	/// <param name="for example JLog(2,7,3) would only show 2.807 and JLog(2,7,4) 2.8074 (it is adviced to not go over 6)"></param>
+	/// <param name="for example JLog(2,7,3) would only show 2.807 and JLog(2,7,4) 2.8074 (more loopcount means more ram/cpu consumption for quick results dont go over 5)"></param>
 	/// <returns></returns>
-	string JLog(long double n,long double n1,int loopcount);
+	string JLog( long double n,long double n1,int loopcount);
 	/// <summary>
 	/// outputs the amount of digits present in the number
 	/// </summary>
@@ -65,4 +71,23 @@ public:
 	/// <param name="Vector"></param>
 	/// <returns></returns>
 	vector<int> FindMostFrequent(vector<int>s);
+	/// <summary>
+	/// Finds the least repeated number in a vector
+	/// </summary>
+	/// <param name="s"></param>
+	/// <returns></returns>
+	vector<int> FindLeastFrequent(vector<int>s);
+	/// <summary>
+	/// reverses a string
+	/// </summary>
+	/// <param name="string"></param>
+	/// <returns></returns>
+	string ReverseAstring(string string);
+	/// <summary>
+	/// example AtoBthSystem(45,2) would turn it into a binary since there is only 1 0
+	/// </summary>
+	/// <param name="a"></param>
+	/// <param name="b"></param>
+	/// <returns>a number into a specific system</returns>
+	int AtoBThSystem(int a, int b);
 };
