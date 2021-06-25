@@ -288,6 +288,48 @@ int JMath::AtoBThSystem(int a, int b) {
 	return stoi(ReverseAstring(s));
 }
 
+bool JMath::isPrime(int a) {
+	if (a == 1) {
+		cout << "Error 1 is an exception" << endl;
+		EXIT_FAILURE;
+	}
+	bool isp = false;
+	for (int i = 2; i < a; i++) {
+		if (a % i == 0) { 
+			return false;
+			break;
+		}
+		else {
+			isp = true;
+		}
+	}
+	if (isp == true) {
+		return true;
+	}
+}
+vector<int> JMath::Intersection(vector<int>a, vector<int>b) {
+	vector<int>c;
+	for (int x : a) {
+		for (int y : b) {
+			if (x == y) {
+				c.push_back(x);
+			}
+		}
+	}
+	return c;
+}
+vector<string> JMath::Intersection(vector<string>a, vector<string>b) {
+	vector<string>c;
+	for (string x : a) {
+		for (string y : b) {
+			if (x == y) {
+				c.push_back(x);
+			}
+		}
+	}
+	return c;
+}
+
 
 
 

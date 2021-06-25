@@ -90,4 +90,18 @@ public:
 	/// <param name="b"></param>
 	/// <returns>a number into a specific system</returns>
 	int AtoBThSystem(int a, int b);
+	/// <summary>
+	/// checks if the number is prime or not
+	/// </summary>
+	/// <param name="a"></param>
+	/// <returns></returns>
+	bool isPrime(int a);
+	/// <summary>
+	/// finds intersection of two vector elements
+	/// </summary>
+	vector<int> Intersection(vector<int>a, vector<int>b);
+	/// <summary>
+	/// finds intersection of two vector elements
+	/// </summary>
+	vector<string> Intersection(vector<string>a, vector<string>b);
 };
