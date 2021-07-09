@@ -329,7 +329,17 @@ vector<string> JMath::Intersection(vector<string>a, vector<string>b) {
 	}
 	return c;
 }
-
+int JMath::Factorial(int a) {
+	if (typeid(a).name() != "int") {
+		cout << "Warning(Fact) This method only takes int as argument + '\n'";
+		exit(EXIT_FAILURE);
+	}
+	int nam = 1;
+	for (int i = 1; i <= a; i++) {
+		nam *= i;
+	}
+	return nam;
+}
 
 
 

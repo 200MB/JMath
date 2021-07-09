@@ -86,8 +86,8 @@ public:
 	/// <summary>
 	/// example AtoBthSystem(45,2) would turn it into a binary since there is only 1 0
 	/// </summary>
-	/// <param name="a"></param>
-	/// <param name="b"></param>
+	/// <param name="Number"></param>
+	/// <param name="the system to convert the number in"></param>
 	/// <returns>a number into a specific system</returns>
 	int AtoBThSystem(int a, int b);
 	/// <summary>
@@ -99,9 +99,15 @@ public:
 	/// <summary>
 	/// finds intersection of two vector elements
 	/// </summary>
-	vector<int> Intersection(vector<int>a, vector<int>b);
+	vector<int> Intersection(vector<int>first_vector, vector<int>second_vector);
 	/// <summary>
 	/// finds intersection of two vector elements
 	/// </summary>
-	vector<string> Intersection(vector<string>a, vector<string>b);
+	vector<string> Intersection(vector<string>first_vector, vector<string>second_vector);
+	/// <summary>
+	/// Factorial of a number
+	/// </summary>
+	/// <param name="number"></param>
+	/// <returns></returns>
+	int Factorial(int number);
 };
