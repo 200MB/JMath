@@ -108,162 +108,61 @@ string JMath::JLog(long double n, long double n1, int loopcount) {
 int JMath::CountDigit(int number) {
 	return int(log10(number) + 1);
 }
-vector<int> JMath::FindMostFrequent(vector<int>v) {
+int JMath::FindMostFrequent(vector<int>v) {
 	if (v.size() == 0) {
-		cout << "Fatal Error(FindLeastFrequent)-vector is empty" << endl;
+		cout << "Fatal Error(FindMostFrequent)-vector is empty" << endl;
 		exit(EXIT_FAILURE);
 	}
-	vector<int>v1;
 	sort(v.begin(), v.end());
-	int max = 1, most = v[0], current = 1;
-	for (int i = 1; i < v.size(); i++) {
-		if (i + 1 == v.size() && v[i] == v[i - 1]) {
-			current++;
-			if (current > max)
-			{
-				max = current;
-				break;
+	int init = v[0],count =0,max = 0,u_A;
+	for (int i = 0; i < v.size(); i++) {
+		if (init != v[i]) {
+			if (count >= max) {
+				max = count;
+				count = 0;
+				u_A = init;
+				init = v[i];
 			}
 		}
-		else if (i + 1 == v.size() && v[i] != v[i - 1]) {
-			if (current > max)
-			{
-				max = current;
-				break;
+		if (i + 1 == v.size() && init == v[i]) {
+			if (count > max) {
+				u_A = init;
 			}
 		}
-		else if (v[i] == v[i - 1]) {
-			current++;
-		}
-		else if (v[i] != v[i-1] && i+1 != v.size()) {
-			if (current > max) {
-				max = current;
-				current = 1;
-			}
-		}
+		
+		count++;
 	}
-	current = 1;
-	for (int i = 1; i < v.size(); i++) {
-		if (i + 1 == v.size() && v[i] == v[i - 1]) {
-			current++;
-             if (current == max) {
-				
-				v1.push_back(v[i-1]);
-				sort(v1.begin(), v1.end());
-				v1.erase(unique(v1.begin(), v1.end()), v1.end());
-				return v1;
-				break;
-			}
-
-
-		}
-		if (i + 1 == v.size() && v[i] != v[i - 1]) {
-			 if (current == max) {
-				v1.push_back(v[i-1]);
-				sort(v1.begin(), v1.end());
-				v1.erase(unique(v1.begin(), v1.end()), v1.end());
-				return v1;
-				break;
-			}
-		}
-		if (v[i] == v[i - 1]) {
-			current++;
-		}
-		else if (v[i] != v[i - 1] && i + 1 != v.size()) {
-			if (current == max) {
-				v1.push_back(v[i-1]);
-				sort(v1.begin(), v1.end());
-				v1.erase(unique(v1.begin(), v1.end()), v1.end());
-				current = 1;
-			}
-			else if (current < max) {
-				current = 1;
-			}
-		}
-	}
+	return u_A;
+	
+	
+	
 }
-vector<int> JMath::FindLeastFrequent(vector<int>v){
+int JMath::FindLeastFrequent(vector<int>v){
 	if (v.size() == 0) {
 		cout << "Fatal Error(FindLeastFrequent)-vector is empty" << endl;
 		exit(EXIT_FAILURE);
 	}
-	vector<int>v1;
 	sort(v.begin(), v.end());
-	int least = INT_MAX, current = 1;
-	for (int i = 1; i < v.size(); i++) {
-		if (i + 1 == v.size() && v[i] == v[i - 1]) {
-			current++;
-			if (current < least)
-			{
-				least = current;
-				break;
+	int init = v[0], count = 0, min = INT_MAX, u_A;
+	for (int i = 0; i < v.size(); i++) {
+		if (init != v[i]) {
+			if (count <= min) {
+				min = count;
+				count = 0;
+				u_A = init;
+				init = v[i];
 			}
 		}
-		else if (i + 1 == v.size() && v[i] != v[i - 1]) {
-			least = 1;
+		if (i + 1 == v.size() && init == v[i]) {
+			if (count < min) {
+				u_A = init;
+			}
 		}
 
-
-		else if (v[i] == v[i - 1]) {
-			current++;
-		}
-		else if (v[i] != v[i - 1] && i + 1 != v.size()) {
-			if (current < least) {
-				least = current;
-				current = 1;
-			}
-			else {
-				current = 1;
-			}
-		}
+		count++;
 	}
-	current = 1;
-	for (int i = 1; i < v.size(); i++) {
-		if (i + 1 == v.size() && v[i] == v[i - 1]) {
-			current++;
-			if (current == least) {
-
-				v1.push_back(v[i - 1]);
-				sort(v1.begin(), v1.end());
-				v1.erase(unique(v1.begin(), v1.end()), v1.end());
-				return v1;
-				break;
-			}
-			else {
-				return v1;
-				break;
-			}
-
-
-		}
-		if (i + 1 == v.size() && v[i] != v[i - 1]) {
-			if (current == least) {
-				v1.push_back(v[i]);
-				sort(v1.begin(), v1.end());
-				v1.erase(unique(v1.begin(), v1.end()), v1.end());
-				return v1;
-				break;
-			}
-			else {
-				return v1;
-				break;
-			}
-		}
-		if (v[i] == v[i - 1]) {
-			current++;
-		}
-		else if (v[i] != v[i - 1] && i + 1 != v.size()) {
-			if (current == least) {
-				v1.push_back(v[i - 1]);
-				sort(v1.begin(), v1.end());
-				v1.erase(unique(v1.begin(), v1.end()), v1.end());
-				current = 1;
-			}
-			else {
-				current = 1;
-			}
-		}
-	}
+	return u_A;
+	
 }
 string JMath::ReverseAstring(string pop) {
 	if (pop.size() == 0) {
@@ -339,6 +238,23 @@ int JMath::Factorial(int a) {
 		nam *= i;
 	}
 	return nam;
+}
+string JMath::bin(int a) {
+	string a1="";
+	int b = 10;
+	while (a > 0) {
+		int x = a % 10;
+		if (x % 2 == 0) {
+			a1 += '0';
+			a /= 2;
+		}
+		else {
+			a1 += '1';
+			a /= 2;
+		}
+	}
+	reverse(a1.begin(), a1.end());
+	return a1;
 }
 
 
