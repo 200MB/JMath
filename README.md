@@ -3,6 +3,6 @@
  i've also decided to add other helpful functions/methods that are not completely focused on math.
  You can use every part of the code but please do link this page if you're going to use it for a public project. thank you
  
- I'm going to update it weekly(unless i gotta have to implement a difficult formula/function/method).
+
  
  
